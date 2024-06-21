@@ -1,0 +1,25 @@
+GET http://localhost:3000/
+
+###
+
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username": "teste4",
+    "email": "teste4@gmail.com",
+    "gender": "Masculino",
+    "ageRange": "13 - 17 anos",
+    "password": "12345"
+}
+
+
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "teste5@gmail.com",
+    "password": "1234"
+}
