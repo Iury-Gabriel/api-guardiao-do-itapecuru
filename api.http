@@ -1,4 +1,4 @@
-GET http://localhost:3000/
+GET http://localhost:3000/users
 
 ###
 
@@ -16,10 +16,10 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:3000/auth/login
+POST http://localhost:3000
 Content-Type: application/json
 
 {
-    "email": "teste5@gmail.com",
+    "email": "teste4@gmail.com",
     "password": "1234"
 }
