@@ -18,6 +18,14 @@ async function loginUser(req, res) {
     console.log(`User password: ${user.password}`); // Debugging line
     console.log(`Password attempt: ${password}`); // Debugging line
 
+    if(password == undefined) {
+      return res.status(401).json({ message: 'Senha que voce digitou está undefined' });
+    }
+
+    if(user.password == undefined) {
+      return res.status(401).json({ message: 'Senha do banco esta undefined' });
+    }
+
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
     if (!isPasswordValid) {
