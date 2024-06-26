@@ -5,7 +5,6 @@ import jwt from "jsonwebtoken";
 async function loginUser(req, res) {
   try {
     const { email, password } = req.body;
-    console.log(`Login attempt for email: ${email}`); // Debugging line
 
     const user = await User.findOne({ email });
     const SECRET = 'itapecurutools'; 
@@ -13,10 +12,6 @@ async function loginUser(req, res) {
     if (!user) {
       return res.status(404).json({ message: 'Usuário não encontrado.' });
     }
-
-    console.log(`User found: ${user}`); // Debugging line
-    console.log(`User password: ${user.password}`); // Debugging line
-    console.log(`Password attempt: ${password}`); // Debugging line
 
     if(password == undefined) {
       return res.status(401).json({ message: 'Senha que voce digitou está undefined' });
